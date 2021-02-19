@@ -6,6 +6,11 @@ resource "aws_s3_bucket" "bucket" {
   bucket = "${var.prefix}-${var.name}"
   acl    = "public-read-write"
 
+  tags = {
+    Name = "My bucket"
+    Environment = "Dev"
+  }
+  
   policy = <<EOF
 {
     "Version": "2012-10-17",
@@ -31,10 +36,6 @@ EOF
 
   }
   force_destroy = true
-  tags = {
-    Name = "My bucket"
-    Environment = "Dev"
-  }
 }
 
 resource "aws_s3_bucket_object" "webapp" {

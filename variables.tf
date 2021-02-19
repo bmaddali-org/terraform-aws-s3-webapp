@@ -4,7 +4,7 @@ variable "name" {}
 variable "global_tags" {
     type = "map"
     default {
-        "Environment" = "Dev"
-        "Name" = "Team2"
+        Environment = "Dev"
+        Name = "Team2"
     }
 }

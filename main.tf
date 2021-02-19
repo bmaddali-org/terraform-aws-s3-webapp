@@ -4,12 +4,7 @@ provider "aws" {
 
 resource "aws_s3_bucket" "bucket" {
   bucket = "${var.prefix}-${var.name}"
-  acl    = "public-read-write"
-
-  tags = {
-    Name = "My bucket"
-    Environment = "Dev"
-  }
+  acl    = "public-read"
   
   policy = <<EOF
 {
